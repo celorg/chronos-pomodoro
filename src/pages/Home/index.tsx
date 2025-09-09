@@ -1,20 +1,20 @@
 import { Container } from "../../components/Container";
 import { CountDown } from "../../components/CountDown";
 import { MainForm } from "../../components/MainForm";
-import { MainTamplates } from "../../templates/MainTamplates";
+import { MainTamplete } from "../../templates/MainTamplete";
 
 
 export function Home() {
 
     return(
-        <MainTamplates>
+        <MainTamplete>
             <Container>
                 <CountDown/>
             </Container>
             <Container>
                 <MainForm />
             </Container>
-        </MainTamplates>
+        </MainTamplete>
     )
 
 }
