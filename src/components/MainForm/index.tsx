@@ -9,6 +9,7 @@ import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
+import { formatSecondForMinutes } from "../../utils/formatSecondsForMinutos";
 
 
 export function MainForm () {
@@ -42,8 +43,6 @@ export function MainForm () {
             type: nextCylcoType,
         }
 
-        console.log(newTask);
-
         const secondsRemaing = newTask.duration * 60;
 
         setState(prevState => {
@@ -52,8 +51,8 @@ export function MainForm () {
                 config: {...prevState.config},
                 activeTask: newTask,
                 currentCycle: nextCyclo, 
-                secondsRemaing, //Conferir
-                formattedSecondsRemaing: '00:10', //Conferir
+                secondsRemaing, 
+                formattedSecondsRemaing: formatSecondForMinutes(secondsRemaing),
                 tasks: [...prevState.tasks, newTask]
             }
         });
