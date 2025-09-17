@@ -1,6 +1,10 @@
+import { useTaskContext } from '../../contexts/TaskContext/useTaskContext'
 import styles from './style.module.css'
 
 export function Cycles() {
+
+    const { state } = useTaskContext();
+
     return (
         <div className={styles.cycles}>
             <span>Ciclos:</span>

@@ -31,7 +31,7 @@ export function MainForm () {
         if(!task) {
             alert("Digite o nome da tarefa");
             return;
-        }
+        };
 
         const newTask: TaskModel = {
             id: Date.now().toString(),
@@ -41,7 +41,7 @@ export function MainForm () {
             interruptDate: null,
             duration: state.config[nextCylcoType],
             type: nextCylcoType,
-        }
+        };
 
         const secondsRemaing = newTask.duration * 60;
 
@@ -54,7 +54,7 @@ export function MainForm () {
                 secondsRemaing, 
                 formattedSecondsRemaing: formatSecondForMinutes(secondsRemaing),
                 tasks: [...prevState.tasks, newTask]
-            }
+            };
         });
 
 
